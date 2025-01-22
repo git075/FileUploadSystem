@@ -65,17 +65,6 @@ The Printshop App is a Java-based application designed to simplify the file uplo
 6. Access the app:
    - Open your browser and navigate to `http://localhost:8080`.
 
-## Deployment on Render
-
-To deploy the application on Render:
-
-1. Log in to [Render](https://render.com/).
-2. Create a new Web Service.
-3. Upload the `.war` file from the `target` directory.
-4. Set the start command to `java -jar target/YourAppName.war`.
-5. Configure environment variables for database connection.
-6. Deploy the service and access the app via the provided Render URL.
-
 ## Usage
 
 1. **Register Shop**:
@@ -94,15 +83,5 @@ To deploy the application on Render:
 - **`target`**: Compiled `.war` file.
 - **`uploads`**: Folder for storing uploaded files.
 
-## For Your Resume
-
-**Project Name**: Printshop App  
-**Description**: Developed a Java-based web application to streamline file transfers for print shops. The app enables customers to upload files directly via QR codes, simplifying operations and enhancing customer experience.  
-**Technologies Used**: Java, Spring Boot, Hibernate, MySQL, Maven  
-**Notable Features**: QR code integration, unique shop directories, REST APIs for file management.
-
----
-
-For any questions or contributions, feel free to open an issue or contact the project owner.
 
 
