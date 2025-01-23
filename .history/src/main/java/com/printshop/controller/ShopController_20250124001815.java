@@ -23,7 +23,7 @@ public class ShopController {
         ResponseEntity<String> baseUrlResponse = ConfigController.getApiBaseUrl();
         String baseUrl = baseUrlResponse.getBody();
 
-        //String baseUrl = "http://localhost:8080";
+        //String baseUrl = "http://localhost:8080"; 
 
 
         String qrCodeUrl = baseUrl + "/api/shop/" + UUID.randomUUID();
