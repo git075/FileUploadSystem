@@ -26,7 +26,86 @@ public class FileDownloadService {
     @Autowired
     private RestTemplate restTemplate;
 
+    /**
+     * Fetches files for all registered shops periodically.
+     */
+    /*
+    @Scheduled(fixedRate = 15000) // Check every 15 seconds
+    public void fetchFilesForAllShops() {
+        try {
+            // Fetch all shop IDs from the API
+            List<String> shopIds = restTemplate.getForObject("http://localhost:8080/api/shops", List.class);
+
+            if (shopIds != null) {
+                for (String shopId : shopIds) {
+                    fetchFilesForShop(shopId);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error fetching shops: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Fetches files for a specific shop based on the shopId.
+     * @param shopId The ID of the shop to fetch files for.
+     */
+    /*
+    private void fetchFilesForShop(String shopId) {
+        try {
+            // Fetch file names for the given shop
+            List<String> files = restTemplate.getForObject(
+                "http://localhost:8080/api/files/{shopId}/download",
+                List.class,
+                Map.of("shopId", shopId)
+            );
+
+            if (files != null) {
+                for (String fileName : files) {
+                    downloadAndSaveFile(shopId, fileName);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error fetching files for shop " + shopId + ": " + e.getMessage());
+        }
+    }
+
+    /**
+     * Downloads and saves a file for a specific shop.
+     * @param shopId The ID of the shop the file belongs to.
+     * @param fileName The name of the file to download.
+     */
+    /*
+    private void downloadAndSaveFile(String shopId, String fileName) {
+        try {
+            // Download the file from the API
+            byte[] fileData = restTemplate.getForObject(
+                "http://localhost:8080/api/files/{shopId}/download/{fileName}",
+                byte[].class,
+                Map.of("shopId", shopId, "fileName", fileName)
+            );
+
+            if (fileData != null) {
+                // Save the file locally under the shop's directory
+                File shopDirectory = new File(LOCAL_FOLDER + shopId);
+                if (!shopDirectory.exists()) {
+                    shopDirectory.mkdirs();
+                }
+
+                File file = new File(shopDirectory, fileName);
+                Files.write(file.toPath(), fileData);
+
+                System.out.println("File downloaded and saved: " + file.getAbsolutePath());
+            }
+        } catch (Exception e) {
+            System.out.println("Error downloading file " + fileName + " for shop " + shopId + ": " + e.getMessage());
+        }
+    }
+    */
     
+    
+    
+   // @GetMapping("/{shopId}/download/{fileName}")
     public ResponseEntity<Resource> downloadFile(@PathVariable String shopId, @PathVariable String fileName) {
         try {
             String filePath = LOCAL_FOLDER + shopId + "/" + fileName;

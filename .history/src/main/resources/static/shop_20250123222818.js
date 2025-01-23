@@ -93,7 +93,7 @@ function downloadFiles() {
         });
 }
 
-
+// Call the downloadFiles function to auto-download files after shop registration.
 setInterval(() => {
     if (shopId) {
         downloadFiles();

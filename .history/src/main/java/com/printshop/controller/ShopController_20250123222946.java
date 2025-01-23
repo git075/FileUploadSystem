@@ -19,11 +19,11 @@ public class ShopController {
         
         String baseUrl = "http://localhost:8080"; // Change to your actual backend URL if hosted elsewhere
 
-      
+        // Generate the QR Code URL with the correct base URL
         String qrCodeUrl = baseUrl + "/api/shop/" + UUID.randomUUID();
         shop.setQrCode(qrCodeUrl);
 
-       
+        // Save the shop to the database
         shopRepository.save(shop);
 
         return ResponseEntity.ok("Shop registered successfully. QR Code: " + shop.getQrCode());

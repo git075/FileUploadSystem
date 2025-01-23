@@ -23,7 +23,7 @@ public class ShopController {
         String qrCodeUrl = baseUrl + "/api/shop/" + UUID.randomUUID();
         shop.setQrCode(qrCodeUrl);
 
-       
+        // Save the shop to the database
         shopRepository.save(shop);
 
         return ResponseEntity.ok("Shop registered successfully. QR Code: " + shop.getQrCode());

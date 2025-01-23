@@ -18,5 +18,8 @@ public class ClientConfig {
     public ByteArrayOutputStream byteArrayOutputStream() {
     	return new ByteArrayOutputStream();
     }
-
+//    @Bean
+//    public IPAddressUtil ipaddressutil() {
+//    	return new IPAddressUtil();
+//    }
 }

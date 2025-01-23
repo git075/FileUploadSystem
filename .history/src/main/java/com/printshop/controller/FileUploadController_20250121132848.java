@@ -84,3 +84,4 @@ public class FileUploadController {
     
 }
  
+//Changed shopId to String from long in both func.

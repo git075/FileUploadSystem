@@ -68,7 +68,7 @@ function loadQRCode() {
 function downloadFiles() {
 	console.log(`Full API URL: ${API_BASE_URL}/api/files/${shopId}/download`);
 	console.log(`shopId being sent: ${shopId}`);
-    fetch(`${API_BASE_URL}/api/files/${shopId}/download`)  
+    fetch(`${API_BASE_URL}/api/files/${shopId}/download`)  //change this API BASE URL to the server's ip.
         .then(response => {
             if (!response.ok) {
                 throw new Error("Failed to fetch files.");
@@ -93,7 +93,7 @@ function downloadFiles() {
         });
 }
 
-
+// Call the downloadFiles function to auto-download files after shop registration.
 setInterval(() => {
     if (shopId) {
         downloadFiles();
