@@ -15,7 +15,7 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 @RequestMapping("/api/files")
 public class FileUploadController {
-	private final String UPLOAD_DIR = "C:/users/shank/uploads/";  // Change this to a fixed location on your system
+	private final String UPLOAD_DIR = "C:/users/shank/uploads/"; 
 
 
     @PostMapping("/{shopId}/upload")
@@ -27,16 +27,6 @@ public class FileUploadController {
         return ResponseEntity.ok("File uploaded successfully.");
     }
     
-    /*
- 
-    @GetMapping("/{shopId}/download")
-    public ResponseEntity<List<String>> getFiles(@PathVariable String shopId) {
-        File directory = new File(UPLOAD_DIR + shopId);
-        if (!directory.exists()) return ResponseEntity.notFound().build();
-        String[] files = directory.list();
-        return ResponseEntity.ok(Arrays.asList(files));
-    } 
-    */
                                                                  
     @GetMapping("/{shopId}/upload-form")
     public ResponseEntity<String> getUploadForm(@PathVariable String shopId) {
@@ -58,7 +48,7 @@ public class FileUploadController {
     public ResponseEntity<List<String>> getFiles(@PathVariable String shopId) {
         File directory = new File(UPLOAD_DIR + shopId);
 
-        // Logging the directory being checked
+       
         System.out.println("Checking directory: " + directory.getAbsolutePath());
 
         if (!directory.exists()) {

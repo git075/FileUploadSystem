@@ -1,6 +1,5 @@
 const API_BASE_URL = "http://localhost:8080";
 
-
 let shopId;
 
 function registerShop() {
@@ -92,7 +91,6 @@ function downloadFiles() {
             alert("Failed to download files.");
         });
 }
-
 
 setInterval(() => {
     if (shopId) {

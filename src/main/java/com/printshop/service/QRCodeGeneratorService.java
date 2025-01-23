@@ -17,12 +17,6 @@ public class QRCodeGeneratorService {
 	
 	@Autowired
 	ByteArrayOutputStream byteArrayOutputStream;
-	 
-	
-//    public QRCodeGeneratorService(ByteArrayOutputStream byteArrayOutputStream) {
-//		super();
-//		this.byteArrayOutputStream = byteArrayOutputStream;
-//	}
 
 
 	public byte[] generateQRCode(String data, int width, int height) throws WriterException, IOException {

@@ -8,7 +8,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
+<<<<<<< HEAD
 @RestController  
+=======
+@RestController 
+>>>>>>> 5fbe2ebf37700dd57953ffb274623d8b015529ba
 @RequestMapping("/api/shop")
 public class ShopController {
     @Autowired
@@ -16,14 +20,14 @@ public class ShopController {
 
     @PostMapping("/register")
     public ResponseEntity<String> registerShop(@RequestBody Shop shop) {
-        
-        String baseUrl = "http://localhost:8080"; // Change to your actual backend URL if hosted elsewhere
+       
+        String baseUrl = "http://localhost:8080"; 
 
-      
+       
         String qrCodeUrl = baseUrl + "/api/shop/" + UUID.randomUUID();
         shop.setQrCode(qrCodeUrl);
 
-       
+        
         shopRepository.save(shop);
 
         return ResponseEntity.ok("Shop registered successfully. QR Code: " + shop.getQrCode());
