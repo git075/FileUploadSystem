@@ -1,5 +1,4 @@
 const API_BASE_URL = "http://localhost:8080";
-//const SERVER_BASE_URL = "http:// 172.21.88.60:8080";
 
 let shopId;
 
@@ -18,7 +17,7 @@ function registerShop() {
         .then(response => response.text())
         .then(data => {
             document.getElementById("registrationResult").innerText = data;
-			shopId = data.match(/shop\/([a-z0-9-]+)/)[1]; // Use UUID format in regex
+			shopId = data.match(/shop\/([a-z0-9-]+)/)[1]; 
 			
  
 
@@ -70,7 +69,7 @@ function loadQRCode() {
 function downloadFiles() {
 	console.log(`Full API URL: ${API_BASE_URL}/api/files/${shopId}/download`);
 	console.log(`shopId being sent: ${shopId}`);
-    fetch(`${API_BASE_URL}/api/files/${shopId}/download`)  //change this API BASE URL to the server's ip.
+    fetch(`${API_BASE_URL}/api/files/${shopId}/download`)  
         .then(response => {
             if (!response.ok) {
                 throw new Error("Failed to fetch files.");
@@ -95,7 +94,6 @@ function downloadFiles() {
         });
 }
 
-// Call the downloadFiles function to auto-download files after shop registration.
 setInterval(() => {
     if (shopId) {
         downloadFiles();
