@@ -18,20 +18,22 @@ public class ShopController {
     @Autowired
     private ConfigController ConfigController;
 
-    @Value("${api.base.url}")
-    private String apiBaseUrl;
+    
+
+@Value("${api.base.url}")
+private String apiBaseUrl;
 
 
     @PostMapping("/register")
     public ResponseEntity<String> registerShop(@RequestBody Shop shop) {
 
-       // ResponseEntity<String> baseUrlResponse = ConfigController.getApiBaseUrl();
-       // String baseUrl = baseUrlResponse.getBody();
+        ResponseEntity<String> baseUrlResponse = ConfigController.getApiBaseUrl();
+        String baseUrl = baseUrlResponse.getBody();
 
         //String baseUrl = "http://localhost:8080";
 
 
-        String qrCodeUrl = apiBaseUrl + "/api/shop/" + UUID.randomUUID();
+        String qrCodeUrl = baseUrl + "/api/shop/" + UUID.randomUUID();
         shop.setQrCode(qrCodeUrl);
 
 

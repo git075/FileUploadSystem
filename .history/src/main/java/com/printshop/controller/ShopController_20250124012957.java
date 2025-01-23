@@ -5,7 +5,6 @@ import com.printshop.repository.ShopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.beans.factory.annotation.Value;
 
 import java.util.UUID;
 
@@ -18,20 +17,16 @@ public class ShopController {
     @Autowired
     private ConfigController ConfigController;
 
-    @Value("${api.base.url}")
-    private String apiBaseUrl;
-
-
     @PostMapping("/register")
     public ResponseEntity<String> registerShop(@RequestBody Shop shop) {
 
-       // ResponseEntity<String> baseUrlResponse = ConfigController.getApiBaseUrl();
-       // String baseUrl = baseUrlResponse.getBody();
+        ResponseEntity<String> baseUrlResponse = ConfigController.getApiBaseUrl();
+        String baseUrl = baseUrlResponse.getBody();
 
         //String baseUrl = "http://localhost:8080";
 
 
-        String qrCodeUrl = apiBaseUrl + "/api/shop/" + UUID.randomUUID();
+        String qrCodeUrl = baseUrl + "/api/shop/" + UUID.randomUUID();
         shop.setQrCode(qrCodeUrl);
 
 
