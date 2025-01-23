@@ -14,21 +14,19 @@ public class ShopController {
     @Autowired
     private ShopRepository shopRepository;
 
-    @Autowired
-    private ConfigController ConfigController;
+    @Auto
 
     @PostMapping("/register")
     public ResponseEntity<String> registerShop(@RequestBody Shop shop) {
+       
 
-        ResponseEntity<String> baseUrl = ConfigController.getApiBaseUrl();
+        String baseUrl = "http://localhost:8080"; 
 
-        //String baseUrl = "http://localhost:8080"; 
-
-
+       
         String qrCodeUrl = baseUrl + "/api/shop/" + UUID.randomUUID();
         shop.setQrCode(qrCodeUrl);
 
-
+        
         shopRepository.save(shop);
 
         return ResponseEntity.ok("Shop registered successfully. QR Code: " + shop.getQrCode());

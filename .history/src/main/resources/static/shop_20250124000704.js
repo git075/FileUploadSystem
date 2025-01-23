@@ -2,23 +2,6 @@
 
 let shopId;
 
-
-let API_BASE_URL;
-
-fetch("/api/config/base-url")
-    .then(response => response.text())
-    .then(baseUrl => {
-        API_BASE_URL = baseUrl;
-        console.log("API Base URL:", API_BASE_URL);
-
-        // Initialize your app or call necessary functions here
-    })
-    .catch(error => {
-        console.error("Error fetching API Base URL:", error);
-        alert("Failed to fetch API Base URL. Ensure the backend is running.");
-    });
-
-
 function registerShop() {
     const shopName = document.getElementById("shopName").value;
     if (!shopName) {

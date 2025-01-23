@@ -20,7 +20,7 @@ public class ShopController {
     @PostMapping("/register")
     public ResponseEntity<String> registerShop(@RequestBody Shop shop) {
 
-        ResponseEntity<String> baseUrl = ConfigController.getApiBaseUrl();
+        RString baseUrl = ConfigController.getApiBaseUrl();
 
         //String baseUrl = "http://localhost:8080"; 
 
