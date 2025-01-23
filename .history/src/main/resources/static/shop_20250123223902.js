@@ -17,7 +17,7 @@ function registerShop() {
         .then(response => response.text())
         .then(data => {
             document.getElementById("registrationResult").innerText = data;
-			shopId = data.match(/shop\/([a-z0-9-]+)/)[1];
+			shopId = data.match(/shop\/([a-z0-9-]+)/)[1]; 
 
             document.getElementById("upload-section").style.display = "block";
             document.getElementById("qr-section").style.display = "block";
@@ -92,6 +92,10 @@ function downloadFiles() {
         });
 }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 5fbe2ebf37700dd57953ffb274623d8b015529ba
 setInterval(() => {
     if (shopId) {
         downloadFiles();
