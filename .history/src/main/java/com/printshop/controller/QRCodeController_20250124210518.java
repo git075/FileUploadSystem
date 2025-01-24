@@ -21,7 +21,7 @@ public class QRCodeController {
     @GetMapping("/{shopId}")
     public ResponseEntity<byte[]> getQRCode(@PathVariable String shopId) throws Exception { 
     	//String hostAddress = ipAddress.getIpAddress();
-        String hostAddress = baseUrl;
+        String hostAddress = hostAddressResponse.getBody();
         String shopUrl = "http://" + hostAddress + ":8080/api/files/" + shopId + "/upload-form";
         byte[] qrCode = qrCodeGeneratorService.generateQRCode(shopUrl, 200, 200);
 
