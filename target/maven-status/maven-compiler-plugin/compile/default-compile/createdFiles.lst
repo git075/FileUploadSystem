@@ -1,0 +1,12 @@
+com\printshop\client\FileDownloadService.class
+com\printshop\controller\ConfigController.class
+com\printshop\controller\FileUploadController.class
+com\printshop\entity\Shop.class
+com\printshop\repository\ShopRepository.class
+com\printshop\config\ClientConfig.class
+com\printshop\controller\FileDownloadController.class
+com\printshop\controller\QRCodeController.class
+com\printshop\service\IPAddressUtil.class
+com\printshop\PrintShopBackendApplication.class
+com\printshop\service\QRCodeGeneratorService.class
+com\printshop\controller\ShopController.class
