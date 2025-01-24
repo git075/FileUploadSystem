@@ -15,6 +15,8 @@ public class ShopController {
     @Autowired
     private ShopRepository shopRepository;
 
+    @Autowired
+    private ConfigController ConfigController;
 
     @Value("${api.base.url}")
     private String apiBaseUrl;
