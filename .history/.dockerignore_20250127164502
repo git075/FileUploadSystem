@@ -3,7 +3,7 @@ target/*.ear
 target/*.zip
 target/*.tar.gz
 target/*.rar
-target/
+target
 .git
 *.log
 *.idea
