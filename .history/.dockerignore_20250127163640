@@ -1,0 +1,8 @@
+target/*.war
+target/*.ear
+target/*.zip
+target/*.tar.gz
+target/*.rar
+.git
+*.log
+*.idea
