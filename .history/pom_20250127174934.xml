@@ -101,7 +101,7 @@
       <configuration>
         <archive>
           <manifestEntries>
-            <Main-Class>com.printshop.PrintShopBackendApplication</Main-Class> <!-- Replace with your main class -->
+            <Main-Class>com.printshop.PrintShop</Main-Class> <!-- Replace with your main class -->
           </manifestEntries>
         </archive>
       </configuration>
